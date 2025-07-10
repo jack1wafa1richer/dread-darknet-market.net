@@ -1,0 +1,38 @@
+<% theme = data.config.html_theme %>
+<section class="pb-12 pb-lg-24 bg-secondary">
+  <div class="position-relative mw-7xl mx-auto py-12">
+    <div class="position-absolute top-0 start-0 w-100 row">
+      <div class="col-3">
+        <div class="rounded-3 py-32 mb-12 mb-md-6" style="background: linear-gradient(180deg, rgba(111, 11, 69, 0.00) 0%, #6F0B45 100%);"></div>
+        <div class="d-flex pt-6 px-4 align-items-end justify-content-center bg-primary-light rounded-3">
+          <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: data.config.keyword_2.sample) %>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="rounded-3 py-32 mb-6" style="background: linear-gradient(180deg, rgba(111, 11, 69, 0.00) 0%, rgba(111, 11, 69, 0.50) 100%);"></div>
+      </div>
+      <div class="col-3">
+        <div class="rounded-3 py-32 mb-6" style="background: linear-gradient(180deg, rgba(111, 11, 69, 0.00) 0%, rgba(111, 11, 69, 0.50) 100%);"></div>
+      </div>
+      <div class="col-3">
+        <div class="rounded-3 py-32 mb-40 mb-md-24" style="background: linear-gradient(180deg, rgba(111, 11, 69, 0.00) 0%, #6F0B45 100%);"></div>
+        <div class="d-flex pt-6 px-4 align-items-end justify-content-center bg-primary rounded-3">
+          <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: data.config.keyword_1.sample) %>
+        </div>
+      </div>
+    </div>
+    <div class="container position-relative">
+      <div class="mw-4xl mx-auto mb-24 text-center">
+        <span class="badge mb-6 d-inline-flex align-items-center bg-secondary-dark border border-secondary-dark lh-base shadow">
+          <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="5" fill="#FF7100"></circle></svg>
+          <span class="ms-2 fw-semibold text-white">1236</span>
+          <span class="ms-1 text-white">Online</span>
+        </span>
+        <h1 class="font-heading text-white mb-2"><%= data.content.hero.title %></h1>
+        <h4 class="font-heading text-dark mb-6"><%= data.content.hero.subtitle %></h4>
+        <p class="mw-xl mx-auto fs-5 text-secondary-light mb-10"><%= data.content.hero.article %></p>
+        <a class="btn btn-primary border-primary-dark" href="#">Study Together Now</a>
+      </div>
+    </div>
+  </div>
+</section>

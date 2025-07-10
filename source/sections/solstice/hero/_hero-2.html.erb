@@ -1,0 +1,33 @@
+<% theme = data.config.html_theme %>
+<section class="py-5">
+  <div class="container position-relative">
+    <div>
+      <a class="d-block bg-white p-4 border rounded-3" href="#">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-5">
+            <div class="mx-auto py-4 px-2 px-md-4">
+              <h1 class="mb-2"><%= data.content.hero.title %></h1>
+              <h4 class="mb-4"><%= data.content.hero.subtitle %></h4>
+              <p class="text-muted mb-4"><%= data.content.hero.article %></p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="position-relative rounded-3 overflow-hidden">
+              <div class="position-absolute top-0 start-0">
+                <svg width="155" height="154" viewBox="0 0 155 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M-34 79.9324V153.361C-34 153.714 -33.7141 154 -33.3615 154H17.62C17.9724 154 18.2585 153.714 18.2585 153.361V94.299C18.2585 55.5087 56.5087 17.2585 95.299 17.2585H154.361C154.714 17.2585 155 16.9724 155 16.62V-34.3615C155 -34.7139 154.714 -35 154.361 -35H80.9324C17.4572 -35 -34 16.4572 -34 79.9324Z" fill="#FF7100"></path>
+                </svg>
+              </div>
+              <div class="position-absolute bottom-0 end-0">
+                <svg width="154" height="158" viewBox="0 0 154 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M189 74.0676V0.638514C189 0.286054 188.714 0 188.361 0H137.38C137.028 0 136.742 0.286054 136.742 0.638514V59.701C136.742 98.4913 98.4914 136.742 59.701 136.742H0.638514C0.286054 136.742 0 137.028 0 137.38V188.361C0 188.714 0.286054 189 0.638514 189H74.0676C137.543 189 189 137.543 189 74.0676Z" fill="#FF7100"></path>
+                </svg>
+              </div>
+              <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: data.config.keyword_2.sample) %>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

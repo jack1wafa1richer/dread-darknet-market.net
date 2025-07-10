@@ -1,0 +1,45 @@
+<section class="py-12 pb-md-24 pt-lg-24 pb-lg-40 overflow-hidden">
+  <div class="container">
+    <div class="position-relative mw-lg mw-lg-5xl px-5 mx-auto">
+      <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+          <% data.content.feedback.keys.reject { |key| key == "title" }.each_with_index do |item, index| %>
+            <div class="carousel-item <%= 'active' if index == 0 %>">
+              <div class="pt-14 px-8 px-md-14 pb-64 pb-lg-14 border border-info rounded-3">
+                <div class="mw-lg">
+                  <h4 class="mb-16"><%= data.content.feedback[item].text %></h4>
+                  <div class="d-flex flex-wrap align-items-start justify-content-between">
+                    <div>
+                      <span class="d-block fw-bold"><%= data.content.feedback[item].nikname %></span>
+                      <span class="d-block small text-light-dark">User</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-lg-none position-relative mt-n40 mt-lg-0" style="height: 512px;">
+                <div class="position-absolute top-0 end-0 w-100 bg-primary-light rounded-3" style="height: 512px; transform: rotate(10deg);"></div>
+                <div class="position-absolute top-0 end-0 w-100 bg-info rounded-3" style="height: 512px; transform: rotate(5deg);"></div>
+                <%= image_tag_with_srcset(class: "position-relative img-fluid d-block w-100 rounded-3", style: "height: 512px; object-fit: cover;", alt: data.config.keyword_2.sample) %>
+              </div>
+              <div class="d-none d-lg-block position-absolute top-0 h-100 end-0 col-4">
+                <div class="position-relative mt-n8" style="height: 512px;">
+                  <div class="position-absolute top-0 end-0 w-100 bg-primary-light rounded-3" style="height: 512px; transform: rotate(10deg);"></div>
+                  <div class="position-absolute top-0 end-0 w-100 bg-info rounded-3" style="height: 512px; transform: rotate(5deg);"></div>
+                  <%= image_tag_with_srcset(class: "position-relative img-fluid d-block w-100 rounded-3", style: "height: 512px; object-fit: cover;", alt: data.config.keyword_2.sample) %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

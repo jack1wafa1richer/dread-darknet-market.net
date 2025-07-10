@@ -1,0 +1,50 @@
+<section class="py-12 py-md-16 py-lg-24 bg-secondary">
+  <div class="container position-relative">
+    <div class="mw-md mw-md-xl mx-auto mw-lg-none">
+      <div class="mb-20 mb-md-32">
+        <div class="row">
+          <div class="col-12 col-lg-5 mb-12 mb-lg-0">
+            <div class="mw-lg-md h-100">
+              <%= image_tag_with_srcset(class: "img-fluid d-block h-100 w-100 rounded-3", style: "object-fit: cover;", alt: "About Image 4") %>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="mw-lg py-lg-16">
+              <h2 class="font-heading mb-6 text-white"><%= data.content.about.title %></h2>
+              <p class="fs-5 text-secondary-light mb-0"><%= data.content.about.part_1.article %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-20 mb-md-32 mb-xl-40">
+        <div class="row">
+          <div class="col-12 col-lg-6 mb-8 mb-lg-0">
+            <div class="position-relative ps-8 mw-lg">
+              <div class="position-absolute start-0 top-0 border-2 border-start border-primary py-3"></div>
+              <h5 class="display-3 fw-bold text-white mb-4"><%= data.content.about.part_2.subtitle %></h5>
+              <p class="text-secondary-light"><%= data.content.about.part_2.article %></p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="position-relative ps-8 mw-lg">
+              <div class="position-absolute start-0 top-0 border-2 border-start border-primary py-3"></div>
+              <h5 class="display-3 fw-bold text-white mb-4"><%= data.content.about.part_3.subtitle %></h5>
+              <p class="text-secondary-light"><%= data.content.about.part_3.article %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-32">
+        <div class="col-12 col-lg-4 mb-8 mb-lg-0">
+          <%= image_tag_with_srcset(class: "img-fluid rounded-3 w-100", style: "height: 320px; object-fit: cover;", alt: "About Image 5") %>
+        </div>
+        <div class="col-12 col-lg-4 mb-8 mb-lg-0">
+          <%= image_tag_with_srcset(class: "img-fluid rounded-3 w-100", style: "height: 320px; object-fit: cover;", alt: "About Image 3") %>
+        </div>
+        <div class="col-12 col-lg-4">
+          <%= image_tag_with_srcset(class: "img-fluid rounded-3 w-100", style: "height: 320px; object-fit: cover;", alt: "About Image 2") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

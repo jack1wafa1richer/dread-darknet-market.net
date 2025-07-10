@@ -1,0 +1,30 @@
+<% theme = data.config.html_theme %>
+<% future = data.content.future %>
+<section class="py-12 py-md-16 py-lg-24">
+  <div class="container">
+    <div class="mw-6xl mx-auto">
+      <div class="mw-md mw-lg-xl mx-auto mb-24 text-center">
+        <h3 class="font-heading"><%= future.title %></h3>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-6 col-xl-7 mb-10 mb-lg-0">
+          <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: "Dynamic Image") %>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-5">
+          <div class="mw-md mx-auto">
+            <% future_items = [future.item_1, future.item_2, future.item_3] %>
+            <% future_items.each_with_index do |item, index| %>
+              <div class="position-relative px-8 py-6 mb-3 <%= index == 1 ? 'bg-primary-light' : '' %> rounded-3">
+                <% if index == 1 %>
+                  <div class="position-absolute top-50 start-0 translate-middle ps-1 py-10 bg-primary"></div>
+                <% end %>
+                <h5><%= data.config.keyword_2.sample %></h5>
+                <p class="text-light-dark mb-0"><%= item[:article] %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

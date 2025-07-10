@@ -1,0 +1,27 @@
+<section class="py-12 py-md-16 py-lg-24 overflow-hidden">
+  <div class="container mb-24">
+    <div class="mw-2xl mx-auto text-center">
+      <h3 class="font-heading mb-0"><%= data.content.feedback.title %></h3>
+    </div>
+  </div>
+  <div class="d-flex mb-14 justify-content-center flex-wrap">
+    <% data.content.feedback.keys.reject { |key| key == "title" }.each_with_index do |item, index| %>
+      <div class="flex-shrink-0 h-full w-100 mw-sm mx-4 p-8 border border-light rounded-3 shadow">
+        <div class="d-flex mb-20 align-items-center">
+          <%= image_tag_with_srcset(class: "img-fluid pt-1 bg-primary-light rounded", style: "width: 64px; height: 64px;", alt: data.config.keyword_2.sample) %>
+          <div class="ms-4 p-2 bg-light-light bg-opacity-50 rounded-1">
+            <span class="fw-bold"><%= data.content.feedback[item].nikname %></span>
+          </div>
+        </div>
+        <div>
+          <p class="fs-5 text-dark-light mb-0"><%= data.content.feedback[item].text %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="text-center">
+    <div class="d-inline-flex px-12 bg-light-light rounded-pill">
+      <button class="btn py-0 px-5 border-0 bg-primary" style="height: 6px;"></button>
+    </div>
+  </div>
+</section>

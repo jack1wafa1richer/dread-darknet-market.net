@@ -1,0 +1,53 @@
+<section class="pb-12 pb-lg-24 position-relative">
+  <div class="position-relative pt-12 pt-lg-24 pb-12 pb-lg-16 mb-8">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary">
+      <div class="d-flex justify-content-center overflow-hidden">
+        <div class="flex-shrink-0 mt-n40 mt-sm-n6 me-6 rounded-3" style="width: 324px; height: 340px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%);"></div>
+        <div class="flex-shrink-0 mt-n40 mt-sm-n32 me-6 rounded-3" style="width: 324px; height: 340px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%);"></div>
+        <div class="flex-shrink-0 mt-n40 mt-sm-n32 me-6 rounded-3" style="width: 324px; height: 340px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%);"></div>
+        <div class="flex-shrink-0 mt-n40 mt-sm-n6 rounded-3" style="width: 324px; height: 340px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%);"></div>
+      </div>
+    </div>
+    <div class="container position-relative">
+      <div class="mw-5xl mx-auto">
+        <div class="row">
+          <div class="col-md-6 col-lg-6 mb-12 mb-md-0">
+            <div>
+              <div class="d-flex flex-wrap align-items-center mb-n4">
+                <div class="mx-3 mb-4 py-2 border-end border-white"></div>
+                <div class="mb-4">
+                  <span class="me-3 small text-white"><%= Time.now.strftime("%d %b %Y") %></span>
+                  <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="2" fill="#D1D1D1"></circle></svg>
+                  <span class="ms-3 small text-white">4 min read</span>
+                </div>
+              </div>
+              <h3 class="font-heading mw-sm text-white mt-4 mb-12"><%= data.content.main.title %></h3>
+              <div class="d-flex align-items-center">
+                <%= image_tag_with_srcset(class: "img-fluid rounded-circle", style: "width: 64px; height: 64px;", alt: data.config.keyword_1.sample) %>
+                <div class="ms-4">
+                  <span class="d-block text-white fw-semibold"><%= data.content.feedback.send("item_#{rand(1..3)}").nikname %></span>
+                  <span class="text-white fw-medium">Content Writer, Solstice</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <%= image_tag_with_srcset(class: "img-fluid h-100 d-block rounded-3", style: "object-fit: cover;", alt: data.config.keyword_2.sample) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="mw-5xl mx-auto">
+      <div class="mw-4xl mx-auto">
+        <h4 class="mb-8"><%= data.content.main.part_1.subtitle %></h4>
+        <p class="fs-5 fw-medium text-dark-light lh-lg"><%= data.content.main.part_1.article %></p>
+        <h4 class="mb-8"><%= data.content.main.part_2.subtitle %></h4>
+        <p class="fs-5 fw-medium text-dark-light lh-lg mb-8"><%= data.content.main.part_2.article %></p>
+        <h4 class="mb-8"><%= data.content.main.part_3.subtitle %></h4>
+        <p class="fs-5 fw-medium text-dark-light lh-lg mb-8"><%= data.content.main.part_3.article %></p>
+      </div>
+    </div>
+  </div>
+</section>

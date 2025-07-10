@@ -1,0 +1,46 @@
+<% theme = data.config.html_theme %>
+<% sections = data.config.sections %>
+<% keywords = data.config.keyword_2 %>
+<section class="py-12 py-md-16 py-lg-24">
+  <div class="container">
+    <div class="mw-6xl mx-auto">
+      <div class="mw-md mw-lg-xl mx-auto mb-20 text-center">
+        <h3 class="font-heading mb-4"><%= data.content.future.title %></h3>
+      </div>
+      <div class="row">
+        <% data.content.future.each_with_index do |(key, value), index| %>
+          <% next if key == "title" %>
+          <div class="col-12 col-md-4 mb-4 mb-md-0">
+            <div class="position-relative pt-12 pb-40 px-10 h-100 border border-primary rounded-3 overflow-hidden">
+              <span class="badge mb-6 pe-3 d-inline-flex align-items-start bg-black text-white lh-base">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2 1.33331H9.46667C7.33333 1.33331 6 2.66665 6 4.79998V7.49998H8.96L7.58 6.11998C7.48 6.01998 7.43333 5.89331 7.43333 5.76665C7.43333 5.63998 7.48 5.51331 7.58 5.41331C7.77333 5.21998 8.09333 5.21998 8.28667 5.41331L10.52 7.64665C10.7133 7.83998 10.7133 8.15998 10.52 8.35331L8.28667 10.5866C8.09333 10.78 7.77333 10.78 7.58 10.5866C7.38667 10.3933 7.38667 10.0733 7.58 9.87998L8.96 8.49998H6V11.2C6 13.3333 7.33333 14.6666 9.46667 14.6666H11.1933C13.3267 14.6666 14.66 13.3333 14.66 11.2V4.79998C14.6667 2.66665 13.3333 1.33331 11.2 1.33331Z" fill="white"></path>
+                  <path d="M1.83337 7.5C1.56004 7.5 1.33337 7.72667 1.33337 8C1.33337 8.27333 1.56004 8.5 1.83337 8.5H6.00004V7.5H1.83337Z" fill="white"></path>
+                </svg>
+                <span class="ms-1"><%= keywords.sample %></span>
+              </span>
+              <h4 class="display-3 fw-bold mb-6"><%= value['subtitle'] %></h4>
+              <p class="text-light-dark"><%= value['article'] %></p>
+              <div class="position-absolute bottom-0 end-0 mb-n5 me-4">
+                <div class="d-flex justify-content-end gap-4 mb-4">
+                  <div class="rounded-2 bg-light-light bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-light-light bg-opacity-75" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-light-light bg-opacity-75" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-light-light bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                </div>
+                <div class="d-flex gap-4">
+                  <div class="rounded-2 bg-light-light bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-light-light bg-opacity-25" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-light-light bg-opacity-25" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-light-light bg-opacity-25" style="width: 64px; height: 64px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="assets/<%= current_theme %>/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/<%= current_theme %>/js/main.js"></script>

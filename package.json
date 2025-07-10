@@ -1,0 +1,11 @@
+{
+  "name": "my_new_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3"
+  },
+  "packageManager": "yarn@4.3.0"
+}

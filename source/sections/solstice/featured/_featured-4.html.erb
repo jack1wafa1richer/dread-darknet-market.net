@@ -1,0 +1,44 @@
+<% theme = data.config.html_theme %>
+<% future = data.content.future %>
+<section class="py-12 py-md-16 py-lg-24 bg-primary">
+  <div class="container">
+    <div class="mw-6xl mx-auto">
+      <div class="mw-md mw-lg-xl mx-auto mb-20 text-center">
+        <h3 class="font-heading text-white mb-4">How it works</h3>
+        <p class="text-primary-light mb-0">What steps do I need to take to join?</p>
+      </div>
+      <div class="row">
+        <% future_items = [future.item_1, future.item_2, future.item_3] %>
+        <% future_items.each_with_index do |item, index| %>
+          <div class="col-4">
+            <div class="position-relative pt-12 pb-40 px-10 h-100 bg-secondary rounded-3 overflow-hidden">
+              <span class="badge mb-6 pe-3 d-inline-flex align-items-centerd bg-primary text-white lh-base">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.2 1.33331H9.46667C7.33333 1.33331 6 2.66665 6 4.79998V7.49998H8.96L7.58 6.11998C7.48 6.01998 7.43333 5.89331 7.43333 5.76665C7.43333 5.63998 7.48 5.51331 7.58 5.41331C7.77333 5.21998 8.09333 5.21998 8.28667 5.41331L10.52 7.64665C10.7133 7.83998 10.7133 8.15998 10.52 8.35331L8.28667 10.5866C8.09333 10.78 7.77333 10.78 7.58 10.5866C7.38667 10.3933 7.38667 10.0733 7.58 9.87998L8.96 8.49998H6V11.2C6 13.3333 7.33333 14.6666 9.46667 14.6666H11.1933C13.3267 14.6666 14.66 13.3333 14.66 11.2V4.79998C14.6667 2.66665 13.3333 1.33331 11.2 1.33331Z" fill="white"></path>
+                  <path d="M1.83337 7.5C1.56004 7.5 1.33337 7.72667 1.33337 8C1.33337 8.27333 1.56004 8.5 1.83337 8.5H6.00004V7.5H1.83337Z" fill="white"></path>
+                </svg>
+                <span class="ms-1"><%= data.config.keyword_2.sample %></span>
+              </span>
+              <h4 class="display-3 fw-bold text-white mb-6"><%= item[:subtitle] %></h4>
+              <p class="text-secondary-light"><%= item[:article] %></p>
+              <div class="position-absolute bottom-0 end-0 mb-n5 me-4">
+                <div class="d-flex justify-content-end gap-4 mb-4">
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-50" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-25" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-25" style="width: 64px; height: 64px;"></div>
+                </div>
+                <div class="d-flex gap-4">
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                  <div class="rounded-2 bg-secondary-dark bg-opacity-10" style="width: 64px; height: 64px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

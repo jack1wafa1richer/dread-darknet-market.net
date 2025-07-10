@@ -1,0 +1,95 @@
+
+# Первым делом надо сгенерировать Favicon с помощью генератора
+# https://realfavicongenerator.net/
+# и распаковать архив в папку data/assets/favicon
+
+# Общие настройки
+general:
+  # Устанавливается в true в случае если есть альтернативный сайт на русском языке на поддомене.
+  # При значении true формируеться мета-тэг alternate с указанием на альтернативную версию на другом языке
+  # (если язык en то будет софорирован для домена ru и наооборот).
+  # При значении false ничего не формируеться.
+  alternate: false
+
+  #Тэг верификации бинга, для добьавления в Bing Webmaster
+  bing_verification_tag: '<meta name="msvalidate.01" content="6DB980A3FF9E1C94033D159A9C0372A6" />'
+
+  # Дата публикации сайта
+  date_published: "2024-07-10"
+
+  # Название магазина
+  shop: "Dread"
+
+  # Язык сайта
+  lang: "en"
+
+  #Модель с помощьб которой будем генерить текст claude, gpt-3.5, gpt-4o.
+  ai_model: "claude"
+
+  # Тайтл сайта
+  site_title: "Dread darknet | Dread market | Dread mirror"
+
+  # Описание сайта
+  site_decription: "Welcome to Dread — the heart of the darknet community. Whether you're searching for Dread Forum, Dread Link, or a reliable Dread access method, we provide a secure and anonymous platform for open discussion. As one of the most trusted spaces on the darknet, Dread Forum Links help users stay connected even in the face of takedowns and restrictions."
+
+  # URL сайта
+  base_url: "https://dread-darknet.net"
+
+  # Путь до логотипа (формируеться автоматически на основе названия шопа, логотипы надо положить в папку по этому пути,
+  # переменная %{shop} заменяется на имя магазина из секции general-shop)
+  logo_path: "images/shops/%{shop}/logo/"
+
+  # Тематика на которую будет сгенерирован контент с помощью OpenAI
+  content_topic: "обзор лучшего интернет онлайн форума"
+
+# Тематика картинок (будет скачано 100 изображений рандомно этих теаматик и конвертировано в webp формат.)
+# Изображения будут помещены в папку source/images/shops/{имя магазина из Общих настроек (значение ключа shop:)}
+# Загрузку картинок нужно выполнить до генеарции сайта - выполнив команду в терминале bin/preprocess
+# Запуск скрипта bin/preprocess выполнит скачиванеи картинок, написание текста с помощью GPT-3.5 на заданую тематику и расстановку ключевых слов
+# Можно запускать каждую задачу по отдельности
+# bin/preprocess --img или bin/preprocess -i - запустит только скачивание изображений заданой тематики и конвертацию их в webp формат
+# bin/preprocess --gpt или bin/preprocess -g - запустит генерацию файла content.yml с помошью gpt-3.5 с расстановкой макросов {{keywords1}} и {{keywords2}}
+# bin/preprocess --key или bin/preprocess -k - запустит расстановку ключевых слов в файле content.yml
+# bin/preprocess --all или запуск без аргумента просто bin/preprocess - запустит выполнение всех задачь поочереди,
+# на выходе мы получим уже готовый content.yml с расставлеными ключами.
+# content.yml это бывший index.md в предыдущей версии генратора.
+# далее для проверики можно запустить bundle exec middleman server и посмотреть что получилось
+image_theme:
+  - market
+  - online shop
+  - electronics
+
+# Тема используемаая при генерации шаблона
+html_theme: "solstice"
+
+# Номера секций используемых в шаблоне (logo: это логотипы магазина, их для начала
+# надо найти 5 штук, вручную сконвертировать в формат webp и положить в папку /source/images/shops/{имя магазина})
+# если изображений нет, логотип просто не будет отображаться.
+# Номера секций от 1 до 5
+sections:
+  logo: 3
+  header: 4
+  hero: 1
+  featured: 3
+  about: 3
+  main: 2
+  faq: 3
+  feedback: 4
+  footer: 4
+
+# Основные ключевые слова - будут обработаны при запуске bin/preprocess вместе с обработкой изображений
+  # Будут вставлены в контент вместо макроса {{keyword1}}
+keyword_1:
+  - Dread darknet
+  - Dread Forum
+  - Dread Link
+  - Dread Forum Links
+  - Dread access
+
+  # Дополнительные ключевые слова, будут вставлены в контент вместо макроса {{keyword2}}
+keyword_2:
+  - Dread darknet forum
+  - Dread darknet mirror
+  - Dread platfrom
+
+

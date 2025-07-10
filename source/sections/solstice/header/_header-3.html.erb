@@ -1,0 +1,68 @@
+<section>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img class="img-fluid" src="<%= data.config.general.logo_path % { shop: data.config.general.shop } %>logo-1.webp" alt="" width="50px">
+      </a>
+      <button class="d-lg-none navbar-toggler btn p-0 rounded-pill" style="border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#nav01" aria-controls="nav01" aria-expanded="false" aria-label="Toggle navigation">
+        <svg class="text-primary" width="51" height="51" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="56" height="56" rx="28" fill="currentColor"></rect>
+          <path d="M37 32H19M37 24H19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse ms-6" id="nav01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="nav-1-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= data.config.keyword_1.sample %></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><%= data.config.keyword_2.sample %></a></li>
+              <li><a class="dropdown-item" href="#"><%= data.config.keyword_2.sample %></a></li>
+              <li><a class="dropdown-item" href="#"><%= data.config.keyword_2.sample %></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#"><%= data.config.keyword_1.sample %></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><%= data.config.keyword_1.sample %></a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="nav-1-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= data.config.keyword_1.sample %></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><%= data.config.keyword_2.sample %></a></li>
+              <li><a class="dropdown-item" href="#"><%= data.config.keyword_2.sample %></a></li>
+              <li><a class="dropdown-item" href="#"><%= data.config.keyword_2.sample %></a></li>
+            </ul>
+          </li>
+        </ul>
+        <div>
+          <a class="btn me-4 btn-sm btn-outline-light text-white" href="#">Login</a>
+          <a class="btn btn-sm btn-primary lh-sm" href="#">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="d-none navbar-menu position-fixed top-0 start-0 bottom-0 w-75" style="max-width: 20rem; z-index: 9999;">
+    <div class="navbar-close position-fixed top-0 start-0 end-0 bottom-0 bg-dark opacity-75"></div>
+    <nav class="position-relative h-100 w-100 d-flex flex-column justify-content-between py-4 px-4 bg-white overflow-auto">
+      <div class="d-flex align-items-center">
+        <a class="me-auto h4 mb-0 text-decoration-none" href="#">
+          <img class="img-fluid" src="<%= data.config.general.logo_path % { shop: data.config.general.shop } %>logo-1.webp" alt="<%= data.config.keyword_2.sample %>" width="50px">
+        </a>
+        <a class="navbar-close" href="#">
+          <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 18L18 6M6 6L18 18" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="py-4">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a class="nav-link text-dark" href="#"><%= data.config.keyword_1.sample %></a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-dark" href="#"><%= data.config.keyword_1.sample %></a></li>
+          <li class="nav-item mb-2"><a class="nav-link text-dark" href="#"><%= data.config.keyword_1.sample %></a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#"><%= data.config.keyword_1.sample %></a></li>
+        </ul>
+      </div>
+      <div>
+        <a class="btn d-block mb-2 btn-sm btn-outline-dark" href="#">Login</a>
+        <a class="btn d-block btn-sm btn-primary" href="#">Get Started</a>
+      </div>
+    </nav>
+  </div>
+</section>

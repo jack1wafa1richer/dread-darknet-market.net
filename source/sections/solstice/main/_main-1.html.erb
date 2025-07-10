@@ -1,0 +1,45 @@
+<% theme = data.config.html_theme %>
+<% sections = data.config.sections %>
+<% main = data.content.main %>
+<% feedback = data.content.feedback %>
+<% current_date = Time.now.strftime("%d %b %Y") %>
+<section class="py-12 py-md-16 py-lg-24">
+  <div class="container">
+    <div class="mw-6xl mx-auto">
+      <%= image_tag_with_srcset(class: "img-fluid d-block mb-12 w-100 rounded-3", alt: data.config.keyword_2.sample) %>
+      <div class="mw-4xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="mb-4">
+            <span class="me-3 small text-light-dark"><%= current_date %></span>
+          </div>
+          <h2 class="font-heading"><%= main.title %></h2>
+        </div>
+        <% if main.part_1 %>
+          <h4 class="mb-6"><%= main.part_1.subtitle %></h4>
+          <p class="fs-5 fw-medium text-dark-light lh-lg"><%= main.part_1.article %></p>
+          <%= image_tag_with_srcset(class: "img-fluid d-block mb-12 w-100 rounded-3", alt: data.config.keyword_1.sample) %>
+        <% end %>
+        <% if main.part_2 %>
+          <h4 class="mb-6"><%= main.part_2.subtitle %></h4>
+          <p class="fs-5 fw-medium text-dark-light lh-lg"><%= main.part_2.article %></p>
+          <%= image_tag_with_srcset(class: "img-fluid d-block mb-12 w-100 rounded-3", alt: data.config.keyword_2.sample) %>
+        <% end %>
+        <% if main.part_3 %>
+          <h4 class="mb-6"><%= main.part_3.subtitle %></h4>
+          <p class="fs-5 fw-medium text-dark-light lh-lg"><%= main.part_3.article %></p>
+          <%= image_tag_with_srcset(class: "img-fluid d-block mb-12 w-100 rounded-3", alt: data.config.keyword_1.sample) %>
+        <% end %>
+        <div class="d-flex mb-n6 flex-wrap align-items-center justify-content-between">
+          <div class="d-flex mb-6 align-items-center">
+            <%= image_tag_with_srcset(class: "img-fluid rounded-circle", style: "width: 64px; height: 64px;", alt: data.config.keyword_1.sample) %>
+            <div class="ms-4">
+              <span class="d-block fw-semibold"><%= feedback.item_1.nikname %></span>
+              <span class="text-light-dark fw-medium">Content Writer, Solstice</span>
+            </div>
+          </div>
+          <div class="mb-6"><a class="btn py-3 px-4 btn-outline-light text-dark shadow" href="#">Share this post</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

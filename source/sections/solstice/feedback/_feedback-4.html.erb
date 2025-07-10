@@ -1,0 +1,43 @@
+<section class="py-12 py-md-16 py-lg-24 bg-primary-light overflow-hidden">
+  <div class="container">
+    <div class="mw-2xl mx-auto mb-20 text-center">
+      <h3 class="font-heading mb-6"><%= data.content.feedback.title %></h3>
+      <p class="text-light-dark mb-0">See what they have to say about us</p>
+    </div>
+    <div class="mw-lg mw-md-4xl mx-auto mw-xl-none pt-16 px-6 px-md-10 bg-secondary rounded-3">
+      <div class="row">
+        <% data.content.feedback.keys.reject { |key| key == "title" }.each do |item| %>
+          <div class="col-md-6 col-xl-4 mb-12">
+            <div class="testimonial-block pt-14 px-6 px-lg-12 pb-6 bg-white rounded-top shadow h-100">
+              <div class="overflow-hidden">
+                <h5 class="display-3 fw-bold mb-8"></h5>
+                <p class="mb-16 text-dark-light"><%= data.content.feedback[item].text %></p>
+                <div class="d-flex align-items-center">
+                  <%= image_tag_with_srcset(class: "img-fluid pt-1 bg-light rounded-pill testimonial-avatar", alt: data.config.keyword_2.sample) %>
+                  <div class="ms-3">
+                    <span class="d-block fw-bold"><%= data.content.feedback[item].nikname %></span>
+                    <span class="d-block small text-light-dark">User</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-block {
+    transition: transform 0.3s;
+  }
+  .testimonial-block:hover {
+    transform: translateY(-10px);
+  }
+  .testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+</style>

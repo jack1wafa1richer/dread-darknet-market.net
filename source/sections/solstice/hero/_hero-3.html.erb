@@ -1,0 +1,20 @@
+<section class="pb-5">
+  <div class="container">
+    <div class="mx-auto" style="max-width: 80rem;">
+      <div class="mx-auto mb-4 text-center" style="max-width: 64rem;">
+        <h1 class="fw-bold mb-3 mt-3 mb-2"><%= data.content.hero.title %></h1>
+        <h4 class="fw-bold mb-3 mt-3"><%= data.content.hero.subtitle %></h4>
+        <p class="mx-auto fs-5 text-muted mb-4" style="max-width: 36rem;"><%= data.content.hero.article %></p>
+        <a class="btn btn-primary" href="#">Study Together Now</a>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: data.config.keyword_1.sample) %>
+        </div>
+        <div class="col-6">
+          <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: data.config.keyword_2.sample) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

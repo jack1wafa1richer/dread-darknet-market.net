@@ -1,0 +1,56 @@
+<section class="py-12 py-md-16 py-lg-24">
+  <div class="container">
+    <div class="p-14 bg-light-light rounded-3">
+      <div class="row">
+        <div class="col-lg-4 mb-8 mb-lg-0">
+          <div class="d-flex flex-column h-100">
+            <h3 class="font-heading mb-auto">FAQ</h3>
+            <div class="mw-sm mt-12">
+              <p class="display-5 fw-bold mb-0">Still have more questions?</p>
+              <p class="display-5 fw-bold mb-6">Talk to our customer happiness team</p>
+              <a class="btn btn-sm btn-secondary" href="#">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.3333 1.66669H6.66666C3.33332 1.66669 1.66666 3.33335 1.66666 6.66669V17.5C1.66666 17.9584 2.04166 18.3334 2.49999 18.3334H13.3333C16.6667 18.3334 18.3333 16.6667 18.3333 13.3334V6.66669C18.3333 3.33335 16.6667 1.66669 13.3333 1.66669ZM11.6667 12.7084H5.83332C5.49166 12.7084 5.20832 12.425 5.20832 12.0834C5.20832 11.7417 5.49166 11.4584 5.83332 11.4584H11.6667C12.0083 11.4584 12.2917 11.7417 12.2917 12.0834C12.2917 12.425 12.0083 12.7084 11.6667 12.7084ZM14.1667 8.54169H5.83332C5.49166 8.54169 5.20832 8.25835 5.20832 7.91669C5.20832 7.57502 5.49166 7.29169 5.83332 7.29169H14.1667C14.5083 7.29169 14.7917 7.57502 14.7917 7.91669C14.7917 8.25835 14.5083 8.54169 14.1667 8.54169Z" fill="currentColor"></path>
+                </svg>
+                <span class="ms-2"><%= data.config.keyword_1.sample %></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="mw-3xl mx-auto">
+            <% data.content.faq.keys.reject { |key| key == "title" }.each_with_index do |item, index| %>
+              <div class="mb-3 bg-white rounded-3">
+                <button class="btn btn-outline-light p-6 d-flex w-100 justify-content-between align-items-center text-start text-black rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= index %>" aria-expanded="false" aria-controls="collapse-<%= index %>">
+                  <span class="h5 mb-0 me-6"><%= data.content.faq[item].q %></span>
+                  <svg class="flex-shrink-0" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_107_9284)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M16 2.66669C8.63586 2.66669 2.66663 8.63592 2.66663 16C2.66663 23.3641 8.63586 29.3334 16 29.3334C23.3641 29.3334 29.3333 23.3641 29.3333 16C29.3333 8.63592 23.3641 2.66669 16 2.66669ZM17.0256 11.8975C17.0256 11.6254 16.9175 11.3646 16.7252 11.1722C16.5329 10.9799 16.272 10.8718 16 10.8718C15.7279 10.8718 15.4671 10.9799 15.2747 11.1722C15.0824 11.3646 14.9743 11.6254 14.9743 11.8975V14.9744H11.8974C11.6254 14.9744 11.3645 15.0824 11.1722 15.2748C10.9798 15.4671 10.8718 15.728 10.8718 16C10.8718 16.272 10.9798 16.5329 11.1722 16.7253C11.3645 16.9176 11.6254 17.0257 11.8974 17.0257H14.9743V20.1026C14.9743 20.3746 15.0824 20.6355 15.2747 20.8278C15.4671 21.0202 15.7279 21.1282 16 21.1282C16.272 21.1282 16.5329 21.0202 16.7252 20.8278C16.9175 20.6355 17.0256 20.3746 17.0256 20.1026V17.0257H20.1025C20.3745 17.0257 20.6354 16.9176 20.8278 16.7253C21.0201 16.5329 21.1282 16.272 21.1282 16C21.1282 15.728 21.0201 15.4671 20.8278 15.2748C20.6354 15.0824 20.3745 14.9744 20.1025 14.9744H17.0256V11.8975Z" fill="#FF7100"></path>
+                    </g>
+                  </svg>
+                </button>
+                <div id="collapse-<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading-<%= index %>">
+                  <div class="accordion-body p-6 text-black">
+                    <%= data.content.faq[item].a %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(function (item) {
+      item.querySelector('button').addEventListener('click', function () {
+        var collapse = item.querySelector('.accordion-collapse');
+        collapse.classList.toggle('show');
+      });
+    });
+  });
+</script>

@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+require 'dotenv/load'
+require 'bundler/setup'
+require 'rake'
+require 'optparse'
+require 'yaml'
+
+# Определение опций
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: preprocess [options]"
+
+  opts.on('-a', '--all', 'Run all tasks') do
+    options[:all] = true
+  end
+
+  opts.on('-i', '--img', 'Run image download and conversion task') do
+    options[:img] = true
+  end
+
+  opts.on('-g', '--gpt', 'Run AI content generation task') do
+    options[:gpt] = true
+  end
+
+  opts.on('-k', '--key', 'Run content processing task') do
+    options[:key] = true
+  end
+
+  opts.on('-m', '--model MODEL', 'Specify AI model (gpt-3.5 or claude)') do |model|
+    options[:model] = model
+  end
+end.parse!
+
+current_dir = File.expand_path('..', __dir__)
+rakefile_path = File.join(current_dir, 'Rakefile')
+
+puts "Current directory: #{Dir.pwd}"
+puts "Trying to load Rakefile from: #{rakefile_path}"
+
+load rakefile_path
+
+# Загрузка конфигурации
+config = YAML.load_file('data/config.yml')
+
+# Если указана модель через опцию, используем её, но не изменяем config.yml
+ai_model = options[:model] || config['general']['ai_model']
+
+# Передаем выбранную модель в задачи Rake
+ENV['AI_MODEL'] = ai_model
+
+# Выполнение задач на основе опций
+if options[:all] || options.empty?
+  Rake::Task['images:download_and_convert'].invoke
+  Rake::Task['content:generate'].invoke
+  Rake::Task['content:process'].invoke
+else
+  Rake::Task['images:download_and_convert'].invoke if options[:img]
+  Rake::Task['content:generate'].invoke if options[:gpt]
+  Rake::Task['content:process'].invoke if options[:key]
+end

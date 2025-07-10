@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="<%= data.config.general.lang %>">
+  <head>
+    <meta charset="utf-8">
+    <%= data.config.general.bing_verification_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= data.config.general.site_title %></title>
+    <meta name="keywords" content="<%= data.config.keyword_1.join(', ') %>, <%= data.config.keyword_2.join(', ') %>">
+    <meta name="description" content="<%= data.config.general.site_decription %>">
+    <meta name="copyright" lang="<%= data.config.general.lang %>" content="<%= data.config.general.shop.upcase %>" >
+    <link rel="canonical" href="<%= data.config.general.base_url %>" >
+    <link href="assets/<%= current_theme %>/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="all" />
+    <% if data.config.general.alternate == true %>
+      <% if data.config.general.lang == 'en' %>
+        <link rel='alternate' hreflang='ru' href='https://ru.<%= data.config.general.base_url.gsub('https://', '') %>' >
+      <% else %>
+        <link rel='alternate' hreflang='en' href='https://<%= data.config.general.base_url.gsub('https://', '') %>' >
+      <% end %>
+    <% end %>
+<!-- Favicons set -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+<!-- End favicons set -->
+    <meta property="og:locale" content="<%= data.config.general.lang %>" >
+    <meta property="og:type" content="website" >
+    <meta property="og:title" content="<%= data.config.general.site_title %>" >
+    <meta property="og:url" content="<%= data.config.general.base_url %>" >
+    <meta property="og:site_name" content="<%= data.config.general.shop.upcase %>" >
+    <meta property="website:modified_time" content="<%= Time.now.strftime('%Y-%m-%dT%H:%M:%S%z') %>" >
+    <meta property="og:image" content="<%= data.config.general.base_url %>/<%= data.config.general.logo_path % { shop: data.config.general.shop } %>logo-<%= data.config.sections.logo %>.webp" >
+    <meta property="og:image:width" content="754" >
+    <meta property="og:image:height" content="686" >
+    <meta property="og:image:type" content="image/webp">
+    <meta name="twitter:card" content="summary_large_image" >
+    <meta name="twitter:label1" content="Est. reading time" >
+    <meta name="twitter:data1" content="5 minutes" >
+
+
+<script type="application/ld+json" id="ld-json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "name": "<%= data.config.general.shop.upcase %>S",
+            "url": "<%= data.config.general.base_url %>",
+            "logo": "<%= "#{data.config.general.logo_path % { shop: data.config.general.shop }}logo-#{data.config.sections.logo}.webp" %>"
+        },
+        {
+            "@type": "Article",
+            "headline": "<%= data.config.general.site_title %>",
+            "image": "<%= "#{data.config.general.logo_path % { shop: data.config.general.shop }}logo-#{data.config.sections.logo}.webp" %>",
+            "description": "<%= data.config.general.site_decription %>",
+            "author": "<%= data.config.general.shop.upcase %>",
+            "publisher": {
+                "@type": "Organization",
+                "name": "<%= data.config.general.shop.upcase %>",
+                "url": "<%= data.config.general.base_url %>",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "<%= "#{data.config.general.logo_path % { shop: data.config.general.shop }}logo-#{data.config.sections.logo}.webp" %>"
+                }
+            },
+            "datePublished": "2024.06.13",
+            "dateModified": "2024-06-14T08:04:55+0200",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "<%= data.config.general.base_url %>"
+            }
+        }
+    ]
+}
+</script>
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

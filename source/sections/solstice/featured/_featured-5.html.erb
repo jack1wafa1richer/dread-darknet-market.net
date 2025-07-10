@@ -1,0 +1,42 @@
+<% theme = data.config.html_theme %>
+<% future = data.content.future %>
+<section class="py-12 py-md-16 py-lg-24 bg-primary">
+  <div class="container">
+    <div class="mw-6xl mx-auto">
+      <div class="mw-md mw-lg-xl mx-auto mb-20 text-center">
+        <h3 class="font-heading text-white mb-4"><%= future.title %></h3>
+        <p class="text-primary-light mb-0">Explore the key steps to get started with our platform</p>
+      </div>
+      <div class="mw-xl mw-lg-5xl mx-auto pt-12 bg-secondary rounded-3 overflow-hidden">
+        <div class="row">
+          <div class="col-12 col-lg-6 mb-lg-0">
+            <div class="px-6 px-lg-8 pb-16 mw-lg mx-auto">
+              <% future_items = [future.item_1, future.item_2, future.item_3] %>
+              <% future_items.each do |item| %>
+                <div class="p-6 border-bottom border-secondary-dark">
+                  <div class="d-flex">
+                    <span class="d-inline-block mt-n1">
+                      <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.8 2H14.2C11 2 9 4 9 7.2V11.25H13.44L11.37 9.18C11.22 9.03 11.15 8.84 11.15 8.65C11.15 8.46 11.22 8.27 11.37 8.12C11.66 7.83 12.14 7.83 12.43 8.12L15.78 11.47C16.07 11.76 16.07 12.24 15.78 12.53L12.43 15.88C12.14 16.17 11.66 16.17 11.37 15.88C11.08 15.59 11.08 15.11 11.37 14.82L13.44 12.75H9V16.8C9 20 11 22 14.2 22H16.79C19.99 22 21.99 20 21.99 16.8V7.2C22 4 20 2 16.8 2Z" fill="#FFC96D"></path>
+                        <path d="M2.75 11.25C2.34 11.25 2 11.59 2 12C2 12.41 2.34 12.75 2.75 12.75H9V11.25H2.75Z" fill="#FFC96D"></path>
+                      </svg>
+                    </span>
+                    <div class="ms-3">
+                      <h6 class="mb-3 text-white"><%= data.config.keyword_2.sample %></h6>
+                      <p class="text-secondary-light mb-0"><%= item[:article] %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="d-flex h-100 ps-10 ps-lg-0 align-items-end justify-content-end">
+              <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: "Dynamic Image") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

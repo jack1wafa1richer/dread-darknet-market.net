@@ -1,0 +1,39 @@
+<section class="py-12 py-md-16 py-lg-24">
+  <div class="container position-relative">
+    <div class="mw-lg mx-auto mw-lg-none mb-20 mb-md-32">
+      <div class="row">
+        <div class="col-12 col-lg-6 mb-12 mb-lg-0">
+          <div class="mw-lg">
+            <%= image_tag_with_srcset(class: "img-fluid rounded-3 mb-3", alt: data.config.keyword_2.sample) %>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="mw-md">
+            <h3 class="font-heading mb-10"><%= data.content.about.title %></h3>
+            <p class="text-light-dark mb-0"><%= data.content.about.part_1.article %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mw-lg mx-auto mw-lg-none">
+      <div class="mb-16 mb-md-24">
+        <div class="row">
+          <div class="col-12 col-md-5 mb-8 mb-md-0">
+            <div class="mw-md">
+              <h3 class="font-heading mb-20"><%= data.content.about.part_2.subtitle %></h3>
+              <%= image_tag_with_srcset(class: "img-fluid rounded-3 mb-3", alt: data.config.keyword_2.sample) %>
+            </div>
+          </div>
+          <div class="col-12 col-md-7">
+            <div class="mw-xl ms-lg-auto">
+              <%= image_tag_with_srcset(class: "img-fluid d-block mb-24 w-100 rounded-3", alt: data.config.keyword_2.sample) %>              
+              <div class="mw-lg">
+                <p class="text-light-dark mb-10"><%= data.content.about.part_2.article %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

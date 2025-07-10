@@ -1,0 +1,44 @@
+<section class="pb-12 pb-lg-24">
+  <div class="container position-relative">
+    <div class="position-absolute top-0 h-100 start-0 ms-md-14">
+      <svg width="500" height="500" viewbox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.5 498.311V304.054C0.5 136.406 136.406 0.5 304.054 0.5H498.311C498.967 0.5 499.5 1.03289 499.5 1.68919V136.561C499.5 137.217 498.967 137.75 498.311 137.75H342.061C290.59 137.75 239.516 163.123 201.319 201.319C163.123 239.516 137.75 290.59 137.75 342.061V498.311C137.75 498.967 137.217 499.5 136.561 499.5H1.68919C1.03249 499.5 0.5 498.967 0.5 498.311Z" fill="url(#paint0_linear_231_9230)" stroke="#F0F0F0"></path>
+        <defs><lineargradient id="paint0_linear_231_9230" x1="0" y1="500" x2="500" y2="0" gradientunits="userSpaceOnUse"><stop stop-color="#F8F8F8"></lineargradient></defs>
+          </svg>
+        </div>
+      <div class="position-absolute top-0 h-100 end-0 me-md-14">
+        <svg width="500" height="500" viewbox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M499.5 1.68919V195.946C499.5 363.594 363.594 499.5 195.946 499.5H1.68919C1.03289 499.5 0.5 498.967 0.5 498.311V363.439C0.5 362.783 1.03289 362.25 1.68919 362.25H157.939C209.41 362.25 260.484 336.877 298.681 298.681C336.877 260.484 362.25 209.41 362.25 157.939V1.68919C362.25 1.03289 362.783 0.5 363.439 0.5H498.311C498.967 0.5 499.5 1.03289 499.5 1.68919Z" fill="url(#paint0_linear_231_9229)" stroke="#F0F0F0"></path>
+          <defs><lineargradient id="paint0_linear_231_9229" x1="499.998" y1="2.85805e-05" x2="8.49831" y2="500" gradientunits="userSpaceOnUse"><stop stop-color="#F8F8F8"></lineargradient></defs>
+            </svg>
+          </div>
+        <div class="position-relative pt-24 pb-12 pb-md-32 mw-3xl mx-auto text-center">
+          <h1 class="font-heading"><%= data.content.about.title %></h1>
+        </div>
+        <div class="position-relative mw-md mx-auto mw-md-5xl mx-auto">
+          <h3 class="font-heading mb-14 text-center"><%= data.content.about.part_1.subtitle %></h3>
+          <div class="row mb-20 mb-md-32">
+            <div class="col-12 col-md-6">
+              <p class="fs-5 text-light-dark"><%= data.content.about.part_1.article %></p>
+            </div>
+            <div class="col-12 col-md-6">
+              <p class="fs-5 text-light-dark"><%= data.content.about.part_2.article %></p>
+            </div>
+          </div>
+          <div class="mb-20 mb-md-32">
+            <div class="row">
+              <div class="col-12 col-md-6 mb-8 mb-md-0">
+                <h3 class="font-heading mb-20"><%= data.content.about.part_2.subtitle %></h3>
+                <%= image_tag_with_srcset(class: "img-fluid rounded-3 mb-3", alt: data.config.keyword_2.sample) %>
+                <%= image_tag_with_srcset(class: "img-fluid rounded-3", alt: data.config.keyword_2.sample) %>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="d-flex flex-column mw-md h-100">
+                  <%= image_tag_with_srcset(class: "img-fluid d-block h-100 rounded-3", alt: data.config.keyword_2.sample) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>

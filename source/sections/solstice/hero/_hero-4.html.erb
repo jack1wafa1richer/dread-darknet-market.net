@@ -1,0 +1,25 @@
+<% theme = data.config.html_theme %>
+<section class="pb-12 pb-lg-24">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6 mb-12 mb-lg-0">
+        <div class="mw-md">
+          <h1 class="font-heading mb-2"><%= data.content.hero.title %></h1>
+          <h4 class="font-heading mb-6"><%= data.content.hero.subtitle %></h4>
+          <p class="mw-xl mx-auto fs-5 text-light-dark mb-10"><%= data.content.hero.article %></p>
+          <div>
+            <a class="btn me-6 btn-primary border-primary-dark" href="#">Get Started</a>
+            <span class="badge d-inline-flex align-items-center border border-info lh-base shadow">
+              <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="5" cy="5" r="5" fill="#FF7100"></circle></svg>
+              <span class="ms-2 fw-semibold">1236</span>
+              <span class="ms-1 text-light-dark">Online</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <%= image_tag_with_srcset(class: "img-fluid d-block w-100 rounded-3", alt: data.config.keyword_2.sample) %>
+      </div>
+    </div>
+  </div>
+</section>
